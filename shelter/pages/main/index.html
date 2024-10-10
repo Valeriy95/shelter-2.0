@@ -10,6 +10,15 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="burger-menu-fon"></div>
+        <div class="burger-menu-content">
+            <ul class="burger-menu-list">
+                <li class="list__item"><a class="burger-menu-list_link_active" href="">About the shelter</a></li>
+                <li class="list__item"><a class="burger-menu-list__link" href="../pets/pets.html">Our pets</a></li>
+                <li class="list__item"><a class="burger-menu-list__link" href="#helps">Help the shelter</a></li>
+                <li class="list__item"><a class="burger-menu-list__link" href="#contacts">Contacts</a></li>
+            </ul>
+        </div>
         <header class="header">
             <div class="logo">
                 <a class="logo__link" href="">
@@ -51,30 +60,13 @@
                 </div>
             </div>
         </section>
-
         <section class="our-friends" id="our-friends-id">
             <div class="our-friends-wrapper">
                 <h3 class="our-friends__title">Our friends who <br> are looking for a house</h3>
                 <div class="our-friends__slider">
                     <div class="our-friends__slider__btn-left"></div>
                     <div class="our-friends__slider__card-container">
-                        <div class="our-friends__slider__card-wrapper">
-                            <div class="slider__card-1">
-                                <div class="slider__card-1__img"></div>
-                                <p class="slider__card-1__name">Katrine</p>
-                                <button class="slider__card-1__btn">Learn more</button>
-                            </div>
-                            <div class="slider__card-2">
-                                <div class="slider__card-2__img"></div>
-                                <p class="slider__card-2__name">Jennifer</p>
-                                <button class="slider__card-2__btn">Learn more</button>
-                            </div>
-                            <div class="slider__card-3">
-                                <div class="slider__card-3__img"></div>
-                                <p class="slider__card-3__name">Woody</p>
-                                <button class="slider__card-3__btn">Learn more</button>
-                            </div>
-                        </div>
+                        <div class="our-friends__slider__cards"></div>
                     </div>
                     <div class="our-friends__slider__btn-right"></div>
                 </div>
@@ -82,8 +74,28 @@
                     <button class="our-friends__btn">Get to know the rest</button>
                 </form>
             </div>
+            <div class="modal-window-container">
+                <div class="modal-window-wrapper">
+                    <div class="modal-window-icon">
+                        <span class="modal-window-icon__text">×</span>
+                    </div>
+                    <div class="modal-window">
+                        <div class="modal-window__img"></div>
+                        <div class="modal-window-content">
+                            <h3 class="modal-window__title"></h3>
+                            <p class="modal-window__type"></p>
+                            <p class="modal-window__description"></p>
+                            <ul class="modal-window__list">
+                                <li class="modal-window__age"></li>
+                                <li class="modal-window__inoculations"></li>
+                                <li class="modal-window__diseases"></li>
+                                <li class="modal-window__parasites"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
         <section class="help" id="helps">
             <div class="help-wrapper">
                 <h3 class="help__title">How you can help <br> our shelter</h3>
@@ -153,7 +165,6 @@
                 </ul>
             </div>
             <div class="footer-location">
-
                 <h3 class="footer-location__title">We are waiting for your visit</h3>
                 <ul class="footer-location__list">
                     <li class="footer-location__item">
@@ -163,7 +174,6 @@
                         <a class="footer-location__link" href="https://www.google.com/maps/place/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.5077185,-0.129273,16z/data=!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw" target="_blank">18 South Park, London</a>
                     </li>
                 </ul>
-
             </div>
             <div class="footer__img"></div>
         </div>

@@ -77,7 +77,9 @@ html {
 }
 
 .list__link,
-.list_link_active {
+.list_link_active,
+.burger-menu-list_link_active,
+.burger-menu-list__link {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 15px;
@@ -87,13 +89,19 @@ html {
     transition: 0.5s;
 }
 
+.burger-menu-list_link_active,
+.burger-menu-list__link {
+    font-size: 25px;
+}
+
 .list__link:hover {
     cursor: pointer;
     color: #FAFAFA;
     transition: 0.5s;
 }
 
-.list_link_active {
+.list_link_active,
+.burger-menu-list_link_active {
     color: #FAFAFA;
 }
 
@@ -102,7 +110,8 @@ html {
     transition: 0.5s;
 }
 
-.list_link_active::after {
+.list_link_active::after,
+.burger-menu-list_link_active::after {
     display: block;
     content: "";
     border-bottom: 3px solid #F1CDB3;
@@ -112,6 +121,60 @@ html {
     display: none;
     width: 30px;
     height: 22px;
+    transition: 0.5s;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    position: relative;
+    left: -14px;
+    transition: 0.5s;
+}
+
+.burger-menu-fon {
+    display: none;
+    margin-left: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.burger-menu-content {
+    width: 320px;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    right: -100%;
+    background-color: #292929;
+    transition: 1s;
+}
+
+.burger-menu-content-open {
+    right: 0;
+    transition: 1s;
+}
+
+.burger-menu-list {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    padding-left: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+.open-fon {
+    margin-left: 0;
+    display: block;
+    transition: 0.5s;
+}
+
+.overflow-hidden {
+    overflow: hidden
 }
 
 .burger-menu__line {
@@ -338,16 +401,24 @@ html {
     transition: 0.5s;
 }
 
-.our-friends__slider__card-container {
-    width: 990px;
+.our-friends__slider__card {
+    width: 270px;
     height: 435px;
+    margin-top: -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #FAFAFA;
+    border-radius: 9px;
+    transition: 0.5s;
 }
 
-.our-friends__slider__card-wrapper {
-    width: 990px;
-    height: 435px;
-    display: flex;
-    justify-content: space-between;
+.our-friends__slider__card:hover {
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+    transition: 0.5s;
 }
 
 .slider__card-1,
@@ -378,18 +449,6 @@ html {
 .slider__card-3__img {
     width: 270px;
     height: 270px;
-}
-
-.slider__card-1__img {
-    background-image: url(../../accects/img/pets-katrine.png);
-}
-
-.slider__card-2__img {
-    background-image: url(../../accects/img/pets-jennifer.png);
-}
-
-.slider__card-3__img {
-    background-image: url(../../accects/img/pets-woody.png);
 }
 
 .slider__card-1__name,
@@ -441,6 +500,51 @@ html {
     transition: 0.5s;
 }
 
+
+
+
+.our-friends__slider__card-container {
+    width: 90%;
+    height: 435px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-friends__slider__cards {
+    display: flex;
+    transition: transform 0.5s ease;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.slider__card {
+    text-align: center;
+}
+
+.slider__card__img {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.slider__card__name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.slider__card__btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 .our-friends__btn {
     width: 261px;
     height: 52px;
@@ -460,6 +564,129 @@ html {
     cursor: pointer;
     background: #FDDCC4;
     transition: 0.5s;
+}
+
+
+.modal-window-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-window-icon {
+    width: 52px;
+    height: 52px;
+    margin-left: 937px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-color: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    transition: 0.5s;
+}
+
+.modal-window-icon:hover {
+    background-color: #F1CDB3;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modal-window-icon__text {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+
+.modal-window {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    margin: auto;
+    background: #FAFAFA;
+    border-radius: 9px;
+}
+
+
+.modal-window__img {
+    width: 500px;
+    height: 500px;
+    background-size: contain;
+}
+
+.modal-window-content {
+    width: 351px;
+    height: 362px;
+    margin-top: 51px;
+    margin-left: 32px;
+}
+
+.modal-window__title {
+    width: 400px;
+    height: 90px;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+.modal-window__type {
+    height: 23px;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22.72px;
+    letter-spacing: 0.06em;
+    margin-top: -36px;
+}
+
+.modal-window__description {
+    font-family: Georgia;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    margin-top: 43px;
+    text-align: left;
+}
+
+.modal-window__list {
+    padding-left: 15px;
+    margin-top: 43px;
+    height: 102px;
+    display: grid;
+}
+
+.modal-window__age,
+.modal-window__inoculations,
+.modal-window__diseases,
+.modal-window__parasites {
+    font-family: Georgia;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__text {
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: #000000;
 }
 
 .help {
@@ -985,6 +1212,44 @@ html {
         display: none;
     }
 
+    .modal-window-icon {
+        margin-left: 664px;
+    }
+
+    .modal-window {
+        width: 630px;
+        height: 350px;
+    }
+
+    .modal-window__img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .modal-window-content {
+        width: 260px;
+        height: 303px;
+        margin-top: 10px;
+        margin-left: 11px;
+    }
+
+    .modal-window__title {
+        width: 153px;
+    }
+
+    .modal-window__description {
+        width: 261px;
+        height: 98px;
+        font-size: 13px;
+        line-height: 14.3px;
+        margin-top: 22px;
+    }
+
+    .modal-window__list {
+        height: 92px;
+        margin-top: 20px;
+    }
+
     .help {
         width: 100%;
         height: 779px;
@@ -998,12 +1263,6 @@ html {
     .help-container {
         width: 100%;
         height: 449px;
-        /* grid-template-columns: 83px 150px 60px 153px 101px;
-        grid-template-rows: 113px 113px;
-        grid-template-areas:
-        "pet-food transportation toys bowls shampoos"
-        "vitamins medicines collars sleeping-areas ."; */
-
         grid-template-columns: 170px 170px 170px;
         grid-template-rows: 113px 113px 113px;
         grid-template-areas:
@@ -1210,6 +1469,54 @@ html {
         display: none;
     }
 
+    .modal-window-icon {
+        width: 49px;
+        height: 49px;
+        margin-left: 248px;
+    }
+
+    .modal-window {
+        width: 240px;
+        height: 341px;
+        justify-content: center;
+    }
+
+    .modal-window__img {
+        display: none;
+    }
+
+    .modal-window-content {
+        width: 220px;
+        height: 321px;
+        margin-top: 12px;
+        margin-left: 0px;
+        overflow: auto;
+    }
+
+    .modal-window__title {
+        text-align: center;
+        width: 152px;
+        margin: auto;
+    }
+
+    .modal-window__type {
+        text-align: center;
+    }
+
+    .modal-window__description {
+        width: 222px;
+        font-size: 13px;
+        margin-top: 19px;
+        line-height: 14.5px;
+        text-align: justify;
+    }
+
+    .modal-window__list {
+        width: 154px;
+        height: 93px;
+        margin-top: 20px;
+    }
+
     .help {
         width: 100%;
         height: 745px;
@@ -1233,8 +1540,6 @@ html {
         height: 555px;
         grid-template-columns: 145px 145px;
         grid-template-rows: 111px 111px 111px 111px 111px;
-        /* grid-template-columns: 83px 150px 60px 153px 101px;
-        grid-template-rows: 113px 113px; */
         grid-template-areas:
         "pet-food transportation"
         "toys bowls"
